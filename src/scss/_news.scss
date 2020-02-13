@@ -1,0 +1,22 @@
+.news__item {
+	@include flex(row, flex-start, center);
+	background: linear-gradient(to bottom, $news-lin-grad-top, $news-lin-grad-bottom);
+	img {
+		width: 30%;
+	}
+}
+
+.inner{
+	padding-left: 2%;
+	h2 {
+		font-size: 1.5em;
+	}
+	p {
+		padding-bottom: 3%;
+	}
+	.btn {
+	    display: inline-block;
+		margin-bottom: 5%;
+		@include button($iner-btn-color,$iner-btn-color,$color);
+	}
+}

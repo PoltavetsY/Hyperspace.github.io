@@ -1,0 +1,148 @@
+@import '_vars';
+@import '_mixin';
+@import '_base';
+@import '_menu';
+@import '_baner';
+@import '_news';
+@import '_table-block';
+@import '_contacts';
+@import '_footer';
+
+nav {
+	@include flex(column, center, center);
+	display: -webkit-flex; 
+	-webkit-flex-direction: column;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
+	position: fixed;
+	width: 25%;
+	height: 100%;
+	background-color: $nav-bg-color;
+	z-index: 1;
+}
+
+main {
+	@include flex(column, flex-start, stretch);
+	width: auto;
+	margin-left: 25%;
+}
+
+footer {
+	margin-left: 25%;
+	padding: 6%;
+	width: auto;
+	background-color: $footer-bg-color;
+}
+
+@media (max-width: 980px) {
+	main {
+		margin: 0;
+	}
+	nav {
+		@include flex(row, center, center);
+		height: auto;
+		width: 100%;
+	}
+	.menu {
+		@include flex(row, flex-start, flex-start);
+		width: 77%;
+	}
+	.menu li {
+		padding: 0 10px;
+		&::after {
+			width: 100%;
+		}
+		&:hover::after {
+			background:  $table-block-bg-color;
+		}
+		a {
+	        padding: 10px;
+		    width: 82%;
+		    text-align: center;
+		    font-size: .8em;
+		}
+	}
+	footer {
+		margin: 0;
+	}
+}
+
+@media (max-width: 736px) {
+	nav{
+		display: none;
+	}
+	.baner {
+		height: 80vh;
+	}
+	.news__item {
+		@include flex(column, flex-start, center);
+		img {
+			width: 100%;
+		}
+		.inner {
+			padding: 5%;
+		}
+	}
+	.box {
+		@include flex(column, flex-start, stretch);
+		.cell{
+			padding: 5% 5% 5% 20%;
+			width: 100%;
+		}
+		.cell:not(:last-child) {
+			border-bottom: none;
+		}
+		.cell:nth-child(2n+1) {
+			border-right: 1px solid $border-cell;	
+		}
+		.cell:nth-child(n+3) {
+			border-top: 1px solid $border-cell;
+		}
+		.cell:first-child {
+		    border-top-left-radius: 5px;
+		    border-top-right-radius: 5px;
+		}
+		.cell:nth-child(2) {
+			border-radius: 0;
+		}
+		.cell:nth-last-child(2) {
+			border-radius: 0;
+		}
+		.cell:last-child {
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+	}
+	.contacts {
+		.cont-info {
+			@include flex(column, flex-start, flex-start);
+		}
+	}
+	.form {
+		padding-bottom: 5%;
+		form {
+			padding-right: 0;
+		} 
+	}
+	.addres {
+		padding: 0;
+		width: 100%;
+		border: none;
+		border-top: 1px solid $input-border;
+	}
+	footer {
+		margin-left: 0;
+	}
+	.copyright li {
+		display: list-item;
+		text-align: left;
+	}
+	.copyright li:nth-child(n+2) {
+		margin-left: 0;
+		padding-left: 0;
+		&::before {
+			position: absolute;
+			content: '';
+		}
+	}
+}

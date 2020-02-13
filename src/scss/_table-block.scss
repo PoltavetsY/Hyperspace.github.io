@@ -1,0 +1,67 @@
+
+.table-block {
+	padding: 6%;
+	background-color:  $table-block-bg-color; 
+	h2 {
+		font-size: 1.5em;
+	}
+	.btn {
+		@include button($border-cell, $bg-color-cell, $color);
+	}
+}
+
+.box {
+	@include flex(row, flex-start, stretch);
+	flex-wrap: wrap;
+	padding-bottom: 3%;
+}
+
+.cell { position: relative;
+	padding: 5% 5% 5% 15%;
+	width: 50%;
+	border: 1px solid $border-cell;
+	background-color: $bg-color-cell;
+	h3 {
+		margin-top: 0;
+	}
+	.icon { 
+		@include sprite();
+		left: 10%;
+	}
+	.item-1 {
+		background-position: (0 -1px);
+	}
+	.item-2 {
+		background-position: (37px -1px);
+	}
+	.item-3 {
+		background-position: (0 -38px);
+	}
+	.item-4 {
+		background-position: (-37px -38px);
+	}
+	.item-5 {
+		background-position: (0px 35px);
+	}
+	.item-6 {
+		background-position: (37px 35px);
+	}
+}
+.cell:nth-child(2n+1) {
+	border-right: none;
+}
+.cell:nth-child(n+3) {
+	border-top: none;
+}
+.cell:first-child {
+	border-top-left-radius: 5px;
+}
+.cell:nth-child(2) {
+	border-top-right-radius: 5px;
+}
+.cell:nth-last-child(2) {
+	border-bottom-left-radius: 5px;
+}
+.cell:last-child {
+	border-bottom-right-radius: 5px;
+}

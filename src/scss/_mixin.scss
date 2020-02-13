@@ -1,0 +1,30 @@
+@mixin flex ($fd, $jc, $ai) {
+	display: flex;
+	flex-direction: $fd;
+	justify-content: $jc;
+	align-items: $ai;
+}
+
+@mixin button ($bc,$hbg-color,$hbord-color) {
+	a {
+	color: $text-color;
+	padding: 10px 20px;
+	border: 1px solid $bc;
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: .75em;
+	transition: .5s;
+		&:hover {
+			color: $color;
+			border-color: $hbord-color;
+			background-color: $hbg-color;
+		}
+	}
+}
+@mixin sprite() {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	background: url(../src/img/sprites.png);
+}

@@ -1,0 +1,30 @@
+.menu {
+	width: 90%;
+	letter-spacing: 0.2em;
+}
+
+.menu li {
+	padding: 25px 0;
+	width: 90%;
+	font-size: .75em;
+	&::after {
+		display: block;
+		content: '';
+		background: $text-color;
+		height: 4px;
+		width: 100%;
+	}
+	&:hover::after {
+		background: linear-gradient(to right, $nav-lin-grad-left, $nav-lin-grad-right);
+	}
+	&:hover a {
+		color: $color;
+	}
+	a {
+		display: inline-block;
+	    box-sizing: content-box;
+	    padding: 15px 0 15px 15px;
+	    width: 93%;
+	    text-align: right;
+	}
+}

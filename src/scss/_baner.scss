@@ -1,0 +1,26 @@
+.baner {
+	@include flex(column, center, flex-start);
+	padding-left: 5%;
+	height: 100vh;
+	background: url("../src/img/2.png") $baner-bg-color fixed;
+    background-size: 30%;
+	h1 {
+		font-size: 3em;
+	}
+	p{
+		padding-bottom: 3%;
+	}
+	.baner-link {
+		border-bottom: 1px dotted $text-color;
+		&:hover {
+			color: $color;
+		}
+	}
+	.btn {
+		@include button ($baner-btn-color,$baner-btn-color,$color);
+	}
+	display: -webkit-flex; 
+	-webkit-flex-direction: column;
+	-webkit-justify-content: center;
+	-webkit-align-items: flex-start;
+} 

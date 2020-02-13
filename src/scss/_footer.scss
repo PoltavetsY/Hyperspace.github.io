@@ -1,0 +1,25 @@
+.copyright li {
+	display: inline-block;
+	font-size: .8em;
+	text-align: center;
+	color: $footer-text;
+}
+
+.copyright li:nth-child(n+2) {
+	position: relative;
+	margin-left: 5%;
+	padding-left: 5%;
+	&::before {
+		position: absolute;
+		content: '|';
+		left: 0;
+	}
+}
+
+.copyright a {
+	color: $footer-text;
+	border-bottom: 1px dotted $footer-text;
+	&:hover {
+		color: $color;
+	}
+}

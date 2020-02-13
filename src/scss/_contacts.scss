@@ -1,0 +1,74 @@
+.contacts {
+	padding: 6%;
+	background-color: $contacts-bg-color;
+	.cont-info {
+		@include flex(row, space-between, flex-start);
+	}
+}
+
+.form {
+	.btn {
+		@include button ($input-border,$input-color,$color);
+	}
+}
+
+form {
+	@include flex (row,space-between,flex-start);
+	flex-wrap: wrap;
+	padding-right: 10%;
+	padding-bottom: 5%;
+}
+
+label {
+	width: 48%;
+	padding-top: 4%;
+	color: $color;	
+}
+
+input,
+textarea  {
+	padding: 15px;
+	color:$text-color;
+	background-color: $input-color;
+	border-radius: 5px;
+	border: 1px solid $input-border;
+	width: 100%;
+	&:focus {
+		outline: none;
+		border: 2px solid $color;
+	}
+}
+
+label:last-child {
+	width: 100%;
+}
+
+.addres {
+	padding-left: 5%;
+	border-left: 1px solid $input-border;
+	span {
+		color: $text-color;
+	}
+}
+
+.email {
+	border-bottom: 1px dotted $text-color;
+	&:hover {
+		color: $color;
+	}	
+}
+
+.social {
+	a {
+		margin: 0 2%;
+		&:hover .fab {
+			color: white;
+		}
+	}
+	a:first-child {
+		margin-left: 0;
+	}
+	.fab {
+		font-size: 1.5em;
+	}
+}
